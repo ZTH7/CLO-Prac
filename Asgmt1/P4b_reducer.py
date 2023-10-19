@@ -1,19 +1,20 @@
 #!/usr/bin/python3
 
 import sys
+import re
 
 previous = None
 sum = ""
 
 for line in sys.stdin:
     key, value = line.split('\t')
-    # value = re.sub(r'\n', '', value)
+
     if key != previous:
         if previous is not None:
-            print("Rating: " + previous + ' ' + sum)
+            print("Rating: " + previous + '\n' + sum)
         previous = key
         sum = ""
     
-    sum += " " + value
+    sum += value.strip() + " "
 
-print("Rating: " + previous + ' ' + sum)
+print("Rating: " + previous + '\n' + sum)
