@@ -8,13 +8,13 @@ sum = ""
 
 for line in sys.stdin:
     key, value = line.split('\t')
-
+    
     if key != previous:
         if previous is not None:
-            print("Rating: " + previous + '\n' + sum)
+            print("Range " + previous + ':' + sum + '\n')
         previous = key
         sum = ""
     
-    sum += value.strip() + " "
+    sum += " " + value.replace('\n', '')
 
-print("Rating: " + previous + '\n' + sum)
+print("Range " + previous + ':' + sum + '\n')
