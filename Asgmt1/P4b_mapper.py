@@ -6,6 +6,6 @@ text = ""
 
 for line in sys.stdin:
     key, value = line.split('\t')
-    text += (key + "\t" + value)
+    text += (key + '\t' + value)
 
 print(text)
