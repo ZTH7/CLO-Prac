@@ -5,7 +5,7 @@ import re
 
 for line in sys.stdin:
     if (line[0] != 'D'):
-        words = re.sub(r'-\w+-[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,', '\t', line)
+        words = re.sub(r'-[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,', '\t', line)
         words = re.sub(r',(.*)\n', '', words)
     
         print(words)

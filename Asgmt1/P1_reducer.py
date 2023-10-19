@@ -2,18 +2,9 @@
 
 import sys
 
-previous = None
-sum = 0
+text = ""
 
 for line in sys.stdin:
-    key, value = line.split('\t')
-    
-    if key != previous:
-        if previous is not None:
-            print(str(sum) + '\t' + previous)
-        previous = key
-        sum = 0
-    
-    sum = sum + int(value)
+    text += line
 
-print(str(sum) + '\t' + previous)
+print(text)
