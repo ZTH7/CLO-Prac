@@ -2,9 +2,4 @@
 
 import sys
 
-text = ""
-
-for line in sys.stdin:
-    text += line
-
-print(text)
+print(sys.stdin.read(), end='')

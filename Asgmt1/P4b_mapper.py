@@ -2,4 +2,4 @@
 
 import sys
 
-print(sys.stdin.read(), end="")
+print(sys.stdin.read(), end='')
