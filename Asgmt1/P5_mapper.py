@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 
 import sys
-import re
+import csv
 
-for line in sys.stdin:
-    if (line[0] != 'n'):
-        words = re.sub(r'"(.*)"', '\t', line)
-        words = re.sub(r'^[^,]*,[^,]*,[^,]*,|,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*$\n', '', words)
-    
-        print(words)
+csvfile = csv.reader(sys.stdin)
+
+next(csvfile)   # Skip header
+
+for line in csvfile:
+   if line[3] != '' and line[4] != '':
+      print(line[3] + '\t' + line[4])

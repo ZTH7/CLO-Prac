@@ -11,7 +11,7 @@ for line in sys.stdin:
     
     if key != previous:
         if previous is not None:
-            print(str(sum / count) + '\t' + previous)
+            print(previous + '\t' + str(sum / count))
         previous = key
         sum = 0
         count = 0
@@ -19,4 +19,4 @@ for line in sys.stdin:
     sum = sum + float(value)
     count += 1
 
-print(str(sum / count) + '\t' + previous)
+print(previous + '\t' + str(sum / count))
