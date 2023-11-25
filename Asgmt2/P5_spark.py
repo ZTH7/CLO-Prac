@@ -6,7 +6,7 @@ from pyspark.sql.types import StringType
 
 spark = SparkSession.builder.appName("P5").getOrCreate()
 
-csvfile = spark.read.option("header", "true").csv("Meteorite_Landings.csv")
+csvfile = spark.read.option(header="true", inferSchema="true").csv("Meteorite_Landings.csv")
 
 csvfile = csvfile.dropna(subset=["mass (g)"])
 

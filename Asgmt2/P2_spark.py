@@ -13,4 +13,5 @@ words = sc.textFile('access_log') \
    .map(lambda word: (word.lower(), 1)) \
    .reduceByKey(lambda a, b: a + b)
 
-print(words.collect())
+for (link, n) in words.collect():
+    print(f"{link} -> {n}")
