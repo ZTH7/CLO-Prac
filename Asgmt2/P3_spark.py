@@ -16,3 +16,5 @@ csvfile = csvfile.withColumn("Date", udf((lambda line : re.sub(r'-(.*)', '', lin
 csvfile = csvfile.groupBy('Date').avg('Close').sort('Date')
 
 csvfile.show()
+
+spark.stop()

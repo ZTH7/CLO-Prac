@@ -15,3 +15,5 @@ csvfile = csvfile.withColumn("mass (g)", col("mass (g)").cast("float"))
 csvfile = csvfile.groupBy('recclass').avg('mass (g)').sort('avg(mass (g))')
 
 csvfile.show()
+
+spark.stop()

@@ -16,3 +16,5 @@ csvfile = csvfile.groupBy('movieId').avg('rating')
 csvfile = csvfile.withColumn("avg(rating)", udf((lambda line : math.trunc(float(line)) + 1))("avg(rating)")).sort('avg(rating)')
 
 csvfile.show()
+
+spark.stop()
